@@ -11,6 +11,8 @@
 |
 */
 
+use Illuminate\Http\Request;
+
 Route::get('/', function () {
 	
     return view('welcome');
@@ -19,4 +21,9 @@ Route::get('/', function () {
 
 Route::get('/hello', function(){
 	return view('hello');
+});
+
+Route::get('/getText', function(Request $request){
+	$mytext = $request->input('mytext');
+	return $mytext;
 });

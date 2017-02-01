@@ -60,11 +60,11 @@
   </div><!-- /.container-fluid -->
 </nav>
 <div class="container">
-	<form action="/getText" method="POST" role="form">
+	<form action="/getText" method="GET" role="form">
 		<legend>Form title</legend>
 		<div class="form-group">
-			<label for="">label</label>
-			<input type="text" class="form-control" id="" placeholder="Input field">
+			<label for="mytext">label</label>
+			<input type="text" class="form-control" name="mytext" id="mytext" placeholder="Input field">
 		</div>
 
 		<button type="submit" class="btn btn-primary">Submit</button>
