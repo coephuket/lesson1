@@ -51,7 +51,7 @@
 						<span class="quantity">1</span>
 						<span class="itemName">Birthday Cake</span>
 						<span class="popbtn"><a class="arrow"></a></span>
-						<span class="price">$49.95</span>
+						<span class="price"> {{ session('cakePrice') }} </span>
 					</li>
 					<li class="row">
 						<span class="quantity">50</span>

@@ -17,10 +17,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/cart/index', function() {
-	return view('cart.index');
-} );
-
+Route::get('/cart/index','CartController@index');
 Route::post('/cart/orderProduct','CartController@order');
 
 
