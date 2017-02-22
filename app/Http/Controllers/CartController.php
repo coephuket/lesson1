@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
+use Cookie;
 
 class CartController extends Controller
 {
@@ -10,25 +12,18 @@ class CartController extends Controller
 	public function index() {
 		session(['cakePrice' => '49.95']); 
 		session()->put('foo','foobar');		
-		//var_dump( session('cakePrice') );
-		//session()->forget('foo'); //delete foo session		
-		session()->pull('foo');		//delete foo session
-		// session()->flush();		// delete all sessions
-		
-		$teams = ["liverpool","manU"];
-		session()->push('teams',$teams);
 
-		$fruit = [ 'fruit' => 'apple', 'veggie' => 'carrot' ];
-		session()->put('fruit',$fruit);
-		session()->put('fruit.kaoy','Banana');
-		
-		dd( session()->all() );
-		return view('cart.index');
+		$cookie = cookie('cupsPrice','5',3600);
+		Cookie::queue($cookie);
+		// Cookie::queue(Cookie::forget('cupsPrice'));		
+
+		return view('cart.index')->withCookie($cookie);
 	}
 
 
-    public function order() {
-
-
+    public function order(Request $request) {
+    	echo session('cakePrice')."<br/>";
+    	echo $request->cookie('cupsPrice')."<br/>";
+    	echo $request->input('beerPrice');
     }
 }

@@ -57,17 +57,21 @@
 						<span class="quantity">50</span>
 						<span class="itemName">Party Cups</span>
 						<span class="popbtn"><a class="arrow"></a></span>
-						<span class="price">$5.00</span>
+						<span class="price">$  {{ Request::cookie('cupsPrice')  }}</span>
 					</li>
 					<li class="row">
 						<span class="quantity">20</span>
 						<span class="itemName">Beer kegs</span>
 						<span class="popbtn"><a class="arrow"></a></span>
-						<span class="price">$919.99</span>				
+						<span class="price">
+						$919.99</span>
+						<input type="hidden" name="beerPrice" value="919.99">				
 					</li>
 					<li class="row totals">
 						<span class="itemName">Total:</span>
 						<span class="price">$1694.43</span>
+						{{ csrf_field()}}
+
 						<span class="order">
 						  <a class="text-center">
 							<button type="submit" class="btn-link" style="color:white">
