@@ -6,6 +6,7 @@
 
 </head>
 <body>
+
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -61,44 +62,37 @@
 </nav>
 <div class="container">
 	<form action="/getText" method="GET" role="form">
-		<legend>Form title</legend>
+		<legend>GET Method</legend>
 		<div class="form-group">
 			<label for="mytext">label</label>
 			<input type="text" class="form-control" name="mytext" id="mytext" placeholder="Input field">
 		</div>
+    <div class="form-group">
+      <label for="mytext2">label</label>
+      <input type="text" class="form-control" name="mytext2" id="mytext" placeholder="Input field">
+    </div>
+
 
 		<button type="submit" class="btn btn-primary">Submit</button>
 	</form>
+
+  <br><br>
+
+  <form action="/getText" method="POST" role="form">
+    <legend>POST Method</legend>
+    <div class="form-group">
+      <label for="mytext">label</label>
+      <input type="text" class="form-control" name="mytext" id="mytext" placeholder="Input field">
+      {{ csrf_field() }}
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+
 </div>
-
-<div class="jumbotron">
-	<div class="container">
-		<h1>Hello world</h1>
-		<p>This is a hello world web page!!!</p></div>
-</div>
-
-
-
-.container(.row>.col-md-4{col$}*3)*2
-
-<div class="container">
-
-	<div class="row">
-		<div class="col-md-4">col1</div>
-		<div class="col-md-4">col2</div>
-		<div class="col-md-4">col3</div>
-	</div>
-</div>
-<div class="container">
-	<div class="row">
-		<div class="col-md-4">col1</div>
-		<div class="col-md-4">col2</div>
-		<div class="col-md-4">col3</div>
-	</div>
-</div>
-
  
-
+.container(.row>.col-md-4{col$}*3)*2
+ 
 
 </body>
 </html>
