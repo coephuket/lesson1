@@ -7,7 +7,11 @@ use Illuminate\Http\Request;
 class Calculator extends Controller
 {
     public function index() {
-    	return view('validate.cal');
+        $num1="0";
+        $num2="0";
+        $result="0";
+        return view('validate.cal',
+                compact('num1','num2','result'));
     }
 
     public function submit(Request $request) {
