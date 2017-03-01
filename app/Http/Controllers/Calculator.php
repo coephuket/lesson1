@@ -41,9 +41,14 @@ class Calculator extends Controller
     }
 
     public function val(Request $request) {
-        $rules = [ 'email' => 'required|email' ];
-        $validator = Validator::make($request->all(),$rules);        
-        $email = $request->input('email');
+        $rules = [ 'email' => 'required|email',
+                    'pass'  => 'required|alpha_dash|confirmed',
+                    'pass_confirmation'  => 'required|alpha_dash',
+                    'integer' => 'required|integer',
+                    'ip' => 'required|ip'
+        ];
+
+        $validator = Validator::make($request->all(),$rules);
         if ($validator->passes() )
             return view('validate.cal',compact('email'));
         else

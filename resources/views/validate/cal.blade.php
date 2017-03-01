@@ -29,7 +29,18 @@
 	<h1>Other validation</h1>
 	<form action="/val" method="post">
 		<label for="Email">Email:</label>
-		<input type="text" name="email" value="{{$email or ''}}">
+		<input type="text" name="email" value="foo@gmail.com"><br>
+		<label for="pass">Password:</label>
+		<input type="text" name="pass" value="pass"><br>
+		<label for="pass_confirmation">Pass confim:</label>
+		<input type="text" name="pass_confirmation" value="pass"><br>
+
+		<label for="integer">Integer:</label>
+		<input type="text" name="integer" value="1234"><br>
+		<label for="ip">IP address:</label>
+		<input type="text" name="ip" value="127.0.0.1">		
+
+
 		{{csrf_field()}}
 		<button type="submit">Submit</button>
 		<br>
