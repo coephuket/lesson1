@@ -3,10 +3,11 @@
 @section('title','Calculator')
 
 @section('content')
-
-	<div class="alert alert-danger">
-		{{ $error or ''}}
-	</div>
+	@if ( isset($error) )
+		<div class="alert alert-danger">
+			{{ $error or ''}}
+		</div>
+	@endif
 
 	<form action="/cal" method="post">
 		<label for="num1">Num:1</label>
