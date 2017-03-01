@@ -11,6 +11,7 @@
 			<h2>@yield('title')</h2>
 		</div>
 	</div>
+	
 	<div class="container">
 		@section('content')
 		@show

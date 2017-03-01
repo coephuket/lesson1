@@ -28,5 +28,6 @@ Route::get('/getText','HelloController@getText');
 Route::post('/getText','HelloController@getText');
 
 Route::get('/cal', 'Calculator@index');
+Route::post('/cal', 'Calculator@submit');
  
 
