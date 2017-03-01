@@ -25,4 +25,14 @@
 		<br>
 	</form>
 
+	<hr>
+	<h1>Other validation</h1>
+	<form action="/val" method="post">
+		<label for="Email">Email:</label>
+		<input type="text" name="email" value="{{$email or ''}}">
+		{{csrf_field()}}
+		<button type="submit">Submit</button>
+		<br>
+	</form>
+
 @endsection

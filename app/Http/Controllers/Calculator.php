@@ -13,7 +13,6 @@ class Calculator extends Controller
     }
 
     public function submit(Request $request) {
-
         $rules = [
             'num1' => 'required|numeric',
             'num2' => 'required|numeric'
@@ -39,7 +38,16 @@ class Calculator extends Controller
                 ->withErrors($validator->messages());
 //              ->with('errors',$validator->messages());
         }
+    }
 
-
+    public function val(Request $request) {
+        $rules = [ 'email' => 'required|email' ];
+        $validator = Validator::make($request->all(),$rules);        
+        $email = $request->input('email');
+        if ($validator->passes() )
+            return view('validate.cal',compact('email'));
+        else
+            return Redirect::to('/cal')
+                ->withErrors($validator->messages());            
     }
 }

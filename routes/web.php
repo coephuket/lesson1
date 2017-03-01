@@ -29,5 +29,6 @@ Route::post('/getText','HelloController@getText');
 
 Route::get('/cal', 'Calculator@index');
 Route::post('/cal', 'Calculator@submit');
+Route::post('/val', 'Calculator@val');
  
 
