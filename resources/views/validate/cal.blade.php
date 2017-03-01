@@ -3,9 +3,13 @@
 @section('title','Calculator')
 
 @section('content')
-	@if ( isset($error) )
+	@if ( count($errors) > 0 )
 		<div class="alert alert-danger">
-			{{ $error or ''}}
+			<ul>
+				@foreach ($errors->all() as $error)
+					<li>{{$error}}</li>
+				@endforeach
+			</ul>
 		</div>
 	@endif
 
