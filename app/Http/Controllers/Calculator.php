@@ -15,8 +15,9 @@ class Calculator extends Controller
     	$num2 = $request->input('num2');
 
         if ( $num1 == '' || $num2 == '')
-            $error = 'มีข้อผิดพลาด';        
-        $result = $num1 + $num2;
+            $error = 'มีข้อผิดพลาด'; 
+        else       
+            $result = $num1 + $num2;
          return view('validate.cal',
               compact('num1','num2','result','error'));
 
