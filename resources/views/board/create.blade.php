@@ -18,4 +18,5 @@
 
 </form>
 
+ <a href="/boards"> Home </a>
 @endsection
