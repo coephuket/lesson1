@@ -1,6 +1,14 @@
 <?php
  
 use Illuminate\Http\Request;
+// ======= final ===============
+
+Route::resource('boards','Boards\\BoardsController');
+
+
+
+
+// ========== before midterm =============
 
 Route::get('/', function () { return view('welcome');   });
 

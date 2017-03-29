@@ -42,7 +42,7 @@ class Calculator extends Controller
 
     public function val(Request $request) {
         $rules = [
-                    'email' => 'sometimes|required|email',
+                    'email' => 'required|email',
                     'pass'  => 'required|alpha_dash|confirmed',
                     'pass_confirmation'  => 'required|alpha_dash',
                     'integer' => 'required|integer',
