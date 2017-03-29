@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Boards;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Board;
 
 class BoardsController extends Controller
 {
@@ -24,7 +25,7 @@ class BoardsController extends Controller
      */
     public function create()
     {
-        //
+        return view('board.create'); 
     }
 
     /**
@@ -35,7 +36,8 @@ class BoardsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Board::create($request->all());
+        return redirect('boards');
     }
 
     /**
