@@ -61,7 +61,8 @@ class BoardsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $board = Board::findOrFail($id);
+        return view('board.edit',compact('board','id')); 
     }
 
     /**
@@ -73,7 +74,9 @@ class BoardsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $board = Board::findOrFail($id);
+        $board->update($request->all());
+        return redirect('boards');
     }
 
     /**
