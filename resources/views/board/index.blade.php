@@ -16,6 +16,8 @@
 		<br>
 	@endforeach
 	
+	{{ $boards->links() }}  <br>
+
 	<hr>
 	<br>
 	<a href="/boards/create"> Create New Message </a>
