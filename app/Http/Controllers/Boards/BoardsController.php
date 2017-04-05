@@ -63,30 +63,18 @@ class BoardsController extends Controller
     {
         $board = Board::findOrFail($id);
         return view('board.edit',compact('board','id')); 
-    }
+    } 
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
         $board = Board::findOrFail($id);
         $board->update($request->all());
         return redirect('boards');
     }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+ 
     public function destroy($id)
     {
-        //
+        Board::destroy($id);
+        return redirect('boards');
     }
 }

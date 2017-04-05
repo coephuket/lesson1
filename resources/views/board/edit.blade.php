@@ -11,7 +11,7 @@
 				name="title" value="{{$board->title}}">
 	</div>
 	<div class="form-group">
-		<label for="body">Title</label>
+		<label for="body">Body</label>
 		<textarea class="form-control" name="body" rows="4">{{$board->body}}</textarea>
 	</div>
 	<input type="hidden" name="_method" value="PUT" />

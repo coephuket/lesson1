@@ -10,7 +10,7 @@
 		<input type="text" class="form-control" name="title">
 	</div>
 	<div class="form-group">
-		<label for="body">Title</label>
+		<label for="body">Body</label>
 		<textarea class="form-control" name="body" rows="4"></textarea>
 	</div>
 	{{csrf_field()}}
