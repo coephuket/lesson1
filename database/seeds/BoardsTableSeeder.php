@@ -6,11 +6,18 @@ class BoardsTableSeeder extends Seeder
 {
     public function run()
     {
-        DB::table('boards')->insert([
-            'title' => 'Title',
-            'body' => 'This is the body message1',
-            'created_at' => date('Y-m-d H:i:s'),
-            'updated_at' => date('Y-m-d H:i:s'),
-        ]);
+    	DB::table('boards')->delete();
+    	$boards = [
+    		[ 'title' => 'Title1',
+    			'body' => 'Body1',],
+    		[ 'title' => 'Title2',
+    			'body' => 'Body2',],
+    		[ 'title' => 'Title3',
+    			'body' => 'Body3',],    			
+    	];
+	    
+	    foreach ($boards as $board) {
+	    	App\Board::create($board);
+	    } 
     }
 }
