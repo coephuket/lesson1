@@ -1,10 +1,10 @@
 @extends('template')
 @section('title','My Board')
 
-@section('content')
-
-	@foreach($boards as $item)
-		{{$item->title}} : {{$item->body}} <br>
+@section('content')	
+	@foreach($boards as $index => $item)
+		{{$index+1}}: {{$item->title}} : {{$item->body}} 
+		<a href="/boards/{{$item->id}}">Show</a> <br>
 	@endforeach
 	
 	<hr>
