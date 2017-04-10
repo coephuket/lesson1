@@ -6,14 +6,25 @@
 		<h4>{{ $NUM_PAGE*($page-1) + $index+1 }}: {{$item->title}} </h4>
 		<p>{{$item->body}} </p>
 
+		Last updated: {{$item->updated_at}} <br>
+
+		<div class="pull-right">
+			<strong>From: </strong>
+			{{$item->user()->get()[0]['name']}} :: {{ $item->ip}}
+		</div>		
+
 		<form action="/boards/{{$item->id}}" method="post" class="form-inline">
-			<a href="/boards/{{$item->id}}" class="btn btn-info">Show</a> 
-			<a href="/boards/{{$item->id}}/edit" class="btn btn-default">Edit</a> 
+			<a href="/boards/{{$item->id}}" class="btn btn-info btn-sm">Show</a> 
+			<a href="/boards/{{$item->id}}/edit" class="btn btn-default btn-sm">Edit</a> 
 			<input type="hidden" name="_method" value="DELETE" />
 			{{csrf_field()}}
-			<button class="btn btn-primary">Delete</button>
+			<button class="btn btn-primary btn-sm">Delete</button>
+
+		
+
 		</form>
 		<br>
+
 	@endforeach
 	
 	{{ $boards->links() }}  <br>
