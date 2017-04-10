@@ -3,7 +3,7 @@
 
 @section('content')	
 	@foreach($boards as $index => $item)
-		<h4>{{$index+1}}: {{$item->title}} </h4>
+		<h4>{{ $NUM_PAGE*($page-1) + $index+1 }}: {{$item->title}} </h4>
 		<p>{{$item->body}} </p>
 
 		<form action="/boards/{{$item->id}}" method="post" class="form-inline">

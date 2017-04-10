@@ -5,9 +5,6 @@ use Illuminate\Http\Request;
 
 Route::resource('boards','Boards\\BoardsController');
 
-
-
-
 // ========== before midterm =============
 
 Route::get('/', function () { return view('welcome');   });
@@ -40,3 +37,7 @@ Route::post('/cal', 'Calculator@submit');
 Route::post('/val', 'Calculator@val');
  
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');

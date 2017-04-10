@@ -8,15 +8,24 @@ use App\Board;
 
 class BoardsController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $boards = Board::paginate(4);
-        return view('board.index',compact('boards'));
+        $NUM_PAGE = 4;
+        $boards = Board::paginate($NUM_PAGE);
+        $page = $request->input('page');
+        $page = ($page != null)?$page:1;
+        return view('board.index',compact('boards','page','NUM_PAGE'));
     }
 
     /**

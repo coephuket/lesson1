@@ -20,7 +20,7 @@ class BoardsTableSeeder extends Seeder
 	    // 	App\Board::create($board);
 	    // } 
     	App\Board::truncate();
-    	factory(App\Board::class,20)->create();
+    	factory(App\Board::class,15)->create();
 
     }
 }
