@@ -41,3 +41,13 @@ Route::post('/val', 'Calculator@val');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+
+
+Route::get('/sendmail', function() {
+	$user = (object) array('email' => 'te.laravel@gmail.com','name' => 'Warodom');
+	Mail::send('emails.welcome',['user' => $user], function($m) use ($user) {
+		$m->from('hello@app.com','Your application');
+		$m->to($user->email, $user->name)->subject('Test Subject mail');		
+	});
+	return 'Sendmail successful';
+});
