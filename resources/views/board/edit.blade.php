@@ -14,6 +14,12 @@
 		<label for="body">Body</label>
 		<textarea class="form-control" name="body" rows="4">{{$board->body}}</textarea>
 	</div>
+ 
+	<strong>From: </strong>
+	{{$board->user()->get()[0]['name']}} 
+
+	<br><br>
+
 	<input type="hidden" name="_method" value="PUT" />
 	{{csrf_field()}}
 	<button type="submit" class="btn btn-primary">Submit</button>

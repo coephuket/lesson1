@@ -22,7 +22,7 @@ class BoardsController extends Controller
     public function index(Request $request)
     {
         $NUM_PAGE = 4;
-        $boards = Board::paginate($NUM_PAGE);
+        $boards = Board::orderBy('updated_at','DESC')->paginate($NUM_PAGE);
         $page = $request->input('page');
         $page = ($page != null)?$page:1;
         return view('board.index',compact('boards','page','NUM_PAGE'));
