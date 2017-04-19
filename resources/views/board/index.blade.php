@@ -30,6 +30,8 @@
 
 	<hr>
 	<br>
-	<a href="/boards/create"> Create New Message </a>
+	@if ( !Auth::guest() )
+		<a href="/boards/create"> Create New Message </a>
+	@endif
 
 @endsection
