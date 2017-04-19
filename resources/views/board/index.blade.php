@@ -6,6 +6,14 @@
 		<h4>{{ $NUM_PAGE*($page-1) + $index+1 }}: {{$item->title}} </h4>
 		<p>{{$item->body}} </p>
 
+		<b>Tags</b>
+		@foreach($item->tags as $ctag)
+			<span class="label label-info">
+				<a href="/boards/searchTag/{{$ctag->id}}" style="color:white">{{$ctag->name}}</a> 
+			</span> &nbsp; 
+		@endforeach
+		<br><br>
+
 		Last updated: {{$item->updated_at}} <br>
 
 		<div class="pull-right">
