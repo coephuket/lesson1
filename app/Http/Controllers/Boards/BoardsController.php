@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Boards;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Board;
+use App\Tag;
 
 class BoardsController extends Controller
 {
@@ -35,7 +36,8 @@ class BoardsController extends Controller
      */
     public function create()
     {
-        return view('board.create'); 
+        $tags = Tag::all();
+        return view('board.create')->with('tags',$tags); 
     }
 
     /**
@@ -47,6 +49,9 @@ class BoardsController extends Controller
     public function store(Request $request)
     {
         Board::create($request->all());
+        $tags = $request->input('tags');
+        $board = Board::all()->last();
+        $board->tags()->attach($tags);
         return redirect('boards');
     }
 

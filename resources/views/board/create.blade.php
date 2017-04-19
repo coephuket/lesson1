@@ -9,6 +9,13 @@
 		<label for="title">Title</label>
 		<input type="text" class="form-control" name="title">
 	</div>
+
+	@foreach($tags as $tag)
+		<label class="checkbox-inline">			
+			<input type="checkbox" name="tags[]" value="{{$tag->id}}"> {{$tag->name}} &nbsp;
+		</label>
+	@endforeach
+
 	<div class="form-group">
 		<label for="body">Body</label>
 		<textarea class="form-control" name="body" rows="4"></textarea>
