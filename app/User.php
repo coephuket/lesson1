@@ -30,4 +30,12 @@ class User extends Authenticatable
     public function board() {
         return $this->hasMany(Board::class);
     }
+
+    public function owns($user, $board) {
+        return $user->id == $board->user_id;
+    }
+
+    public function isSuperAdmin($user) {
+        return $user->level == 'admin';
+    }
 }
