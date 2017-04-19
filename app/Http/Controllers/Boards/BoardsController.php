@@ -84,7 +84,14 @@ class BoardsController extends Controller
     {
         $board = Board::findOrFail($id);
         $tags = $request->input('tags');
-        $board->tags()->sync($tags);
+        if ($tags == null) {
+            $pt = Tag::all();
+            foreach( $pt as $t ) 
+                $board->tags()->detach($t->id);        
+        }
+        else{
+            $board->tags()->sync($tags);        
+        }
         $board->update($request->all());
         return redirect('boards');
     }
