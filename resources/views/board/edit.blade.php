@@ -10,6 +10,18 @@
 		<input type="text" class="form-control" 
 				name="title" value="{{$board->title}}">
 	</div>
+
+	@foreach( $tags as $tag) 
+		<!-- {{ $chk = '' }} -->
+		@foreach($board->tags as $ctag)
+			@if ( $tag->id == $ctag->id)
+				<!-- {{ $chk = 'checked' }} -->
+			@endif
+		@endforeach
+		<input type="checkbox" name="tags[]" value="{{$tag->id}}" {{$chk}}> {{$tag->name}} &nbsp;
+	@endforeach
+
+
 	<div class="form-group">
 		<label for="body">Body</label>
 		<textarea class="form-control" name="body" rows="4">{{$board->body}}</textarea>
