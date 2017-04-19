@@ -51,3 +51,6 @@ Route::get('/sendmail', function() {
 	});
 	return 'Sendmail successful';
 });
+
+
+Route::get('/boards/searchTag/{id}','Boards\\BoardsController@searchTag');

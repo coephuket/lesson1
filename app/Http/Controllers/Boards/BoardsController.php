@@ -101,4 +101,12 @@ class BoardsController extends Controller
         Board::destroy($id);
         return redirect('boards');
     }
+
+    public function searchTag($id)
+    {
+        $tag = Tag::findOrFail($id);
+        $boards = $tag->boards;
+        $count = $tag->boards->count();
+        return view('board.search', compact('boards','count'));
+    }
 }

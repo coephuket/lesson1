@@ -19,7 +19,8 @@ class CreateBoardTagTable extends Migration
                     ->onDelete('cascade')->onUpdate('cascade');
             $table->integer('tag_id')->unsigned()->index();
             $table->foreign('tag_id')->references('id')->on('tags')
-                    ->onDelete('cascade')->onUpdate('cascade');        
+                    ->onDelete('cascade')->onUpdate('cascade');
+            $table->timestamps();        
         });
     }
 
