@@ -26,13 +26,13 @@ class AuthServiceProvider extends ServiceProvider
         $this->registerPolicies();
 
         Gate::before(function($user, $ability){
-            if ($user->isSuperAdmin()) {
+            if ($user->isSuperAdmin($user)) {
                 return true;
             }
         });
 
         Gate::define('show',function($user,$board) {
-            return $user->owns($board);
+            return $user->owns($user,$board);
         });
     }
 }

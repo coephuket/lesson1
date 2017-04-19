@@ -14,6 +14,9 @@
 		<textarea class="form-control" name="body" rows="4"></textarea>
 	</div>
 	{{csrf_field()}}
+
+	<input type="hidden" name="user_id" value="{{Auth::user()->id}}">
+	<input type="hidden" name="ip" value="{{Request::getClientIp()}}">
 	<button type="submit" class="btn btn-primary">Submit</button>
 
 </form>
